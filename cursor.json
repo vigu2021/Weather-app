@@ -1,0 +1,49 @@
+{
+    "project": "Weather App with Machine Learning Forecasting",
+    "description": "A weather forecasting app with a React frontend and a Flask backend, using Open-Meteo API for real-time weather data. Integrates machine learning (LSTM) for forecasting and sentiment analysis for weather-related user feedback.",
+    "backend": {
+      "language": "Python",
+      "framework": "Flask",
+      "database": "PostgreSQL (using SQLAlchemy for ORM)",
+      "ORM": "SQLAlchemy",
+      "task_scheduler": "APScheduler (to fetch data periodically)",
+      "folder_structure": {
+        "app.py": "Main Flask entry point",
+        "config.py": "Flask configuration settings",
+        "database/models.py": "SQLAlchemy models",
+        "database/__init__.py": "Database initialization",
+        "routes/weather.py": "Weather API routes",
+        "routes/users.py": "User authentication routes",
+        "services/open_meteo.py": "Extract data from Open-Meteo API",
+        "services/ml_forecasting.py": "LSTM-based weather forecasting",
+        "services/sentiment_analysis.py": "User sentiment analysis for weather feedback",
+        "ml_models/lstm_model.py": "LSTM model for weather prediction",
+        "ml_models/sentiment_model.py": "Sentiment analysis model",
+        "etl/extract.py": "Extract weather data from Open-Meteo API",
+        "etl/transform.py": "Transform raw weather data for ML models and analytics",
+        "etl/load.py": "Load processed weather data into the database",
+        "logs/app.log": "Application logs",
+        "tests/": "Unit and integration tests"
+      }
+    },
+    "frontend": {
+      "language": "JavaScript",
+      "framework": "React",
+      "UI_library": "Material-UI / Tailwind CSS"
+    },
+    "features": {
+      "weather": {
+        "fetch_live_data": true,
+        "store_historical_data": true,
+        "search_by_city": true,
+        "display_forecast": true,
+        "ml_forecast": true,
+        "sentiment_analysis": true
+      }
+    },
+    "deployment": {
+      "cloud": "None (for now, will develop locally)",
+      "containerization": "Docker (optional)"
+    },
+    "instructions": "Ensure API routes follow RESTful principles. Fetch weather data from Open-Meteo API. Keep the frontend simple with React state management. Use Flask background tasks for scheduled API calls. Store historical weather data using SQLAlchemy with PostgreSQL. Integrate an LSTM-based machine learning model for weather forecasting. Implement sentiment analysis to process user feedback on weather conditions. Ensure machine learning models are stored in 'ml_models/' and properly utilized in 'services/'. Implement an ETL pipeline with separate scripts for extraction, transformation, and loading of weather data into the database."
+  }
